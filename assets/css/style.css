@@ -1,21 +1,29 @@
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    box-sizing: border-box;
     display: grid;
     grid-template-columns: 200px 1fr;
+    grid-template-rows: auto 1fr auto;
     grid-template-areas:
         "header header"
-        'sidebar main'
-        'footer footer';
+        "sidebar main"
+        "footer footer";
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #ECEFF1;
+    color: #333;
 }
 
+/* Cabeçalho */
 .cabecalho {
     grid-area: header;
-    background-color: #ff4000;
+    background-color: #0D47A1;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -25,62 +33,62 @@ body {
 
 .cabecalho .logo img {
     max-width: 30%;
-
 }
-
 
 .cabecalho .menu {
     display: flex;
-    gap:1em;
+    gap: 1em;
     flex-direction: row;
 }
 
-.cabecalho .menu a{
-    color: #fff;
+.cabecalho .menu a {
+    color: #FFFFFF;
     text-decoration: none;
     font-weight: 700;
-    font-size: 1.5rem;   
-
+    font-size: 1.5rem;
+    transition: color 0.3s, border 0.3s;
 }
 
-.cabecalho .menu a:hover{
-    color:rgb(198, 39, 251);
-    border: 1px solid #ab0f0f;
+.cabecalho .menu a:hover {
+    color: #FF7043;
+    border-bottom: 2px solid #FF7043;
 }
 
-/*barra lateral*/
-
+/* Barra lateral */
 .sidebar {
     grid-area: sidebar;
-    display:flex;
+    display: flex;
     flex-direction: column;
     gap: 1em;
     padding: 1rem;
-    background-color: #63055c;
+    background-color: #1976D2;
+    color: #fff;
 }
 
-.sidebar ul{
+.sidebar ul {
     list-style: none;
-
 }
 
-.sidebar ul li a{
+.sidebar ul li a {
     text-decoration: none;
     font-size: 1.5rem;
+    color: #FFFFFF;
+    transition: color 0.3s;
 }
 
-.sidebar ul li a:hover{
-color: #ab0f0f;
+.sidebar ul li a:hover {
+    color: #FF7043;
 }
 
+/* Conteúdo principal */
 .conteudo {
     grid-area: main;
-
-    background-color: red
+    background-color: #FFFFFF;
+    padding: 2rem;
 }
 
-
-.template-filmes{
+/* Template de filmes */
+.template-filmes {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -88,20 +96,31 @@ color: #ab0f0f;
     flex-wrap: wrap;
     gap: 1rem;
     padding: 2rem;
-
 }
 
-.template-filmes .filme{
-    max-width: 30%;
+.template-filmes .filme {
+    flex: 1 1 300px;
+    max-width: 300px;
+    background-color: #F5F5F5;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: transform 0.2s;
 }
 
-.template-filmes .filme img{
+.template-filmes .filme:hover {
+    transform: scale(1.03);
+}
+
+.template-filmes .filme img {
     max-width: 100%;
-
+    border-radius: 6px;
 }
 
-
+/* Rodapé */
 .footer {
     grid-area: footer;
-
+    background-color: #0D47A1;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 1rem;
 }

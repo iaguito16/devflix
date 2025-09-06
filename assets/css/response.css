@@ -1,0 +1,40 @@
+@media  (max-width: 720px) {
+    body{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        'header'
+        'sidebar'
+        'main'
+        'footer';
+
+    }
+    .cabecalho{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .cabecalho .logo{
+        text-align: center;
+    }
+    .cabecalho .menu{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .sidebar{
+        flex-direction: row;
+    }
+    .sidebar ul{
+        display: flex;
+        gap: 1rem;
+    }
+    .template-filmes .filme{
+        border: 1px solid #730808;
+        padding: 1em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+}
